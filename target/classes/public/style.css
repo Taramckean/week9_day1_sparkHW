@@ -1,5 +1,21 @@
 h2{color: LightSkyBlue;
-padding: 20px;
-border-bottom: grey dotted 2px;}
+padding: 3px;
+border:2px;
+text-shadow: slateGrey 0.5px 0.5px ;
+}
 
-.container{text-align: center;}
+div{
+
+border: dotted 2px grey;}
+
+.container{
+margin-top:20px;
+text-align: center;
+    max-width: 20%;
+    margin: auto;
+    background-color:white;}
+
+    body{
+    margin-top:30px;
+    }
+

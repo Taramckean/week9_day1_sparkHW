@@ -59,8 +59,21 @@ public class RandomNameController {
 			Person oneName = classPeople.get(random.nextInt(classPeople.size()));
 
 			HashMap<String, Object> model = new HashMap<>();
-			model.put("name", oneName);
-			model.put("template", "persons.vtl");
+			model.put("person", oneName);
+			model.put("template", "OnePerson.vtl");
+			return new ModelAndView(model, "layout.vtl");
+		}, velocityTemplateEngine);
+
+		get("/two", (req, res) -> {
+			Random random = new Random();
+			Person oneName = classPeople.get(random.nextInt(classPeople.size()));
+
+			HashMap<String, Object> model = new HashMap<>();
+			model.put("person", oneName);
+			classPeople.remove(oneName);
+			Person secondName = classPeople.get(random.nextInt(classPeople.size()));
+			model.put("person2", secondName);
+			model.put("template", "TwoPeople.vtl");
 			return new ModelAndView(model, "layout.vtl");
 		}, velocityTemplateEngine);
 
